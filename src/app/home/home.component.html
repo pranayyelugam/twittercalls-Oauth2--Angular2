@@ -1,0 +1,89 @@
+<app-footer></app-footer>
+
+
+<div class="jumbotron">
+  <h1 align = "center">Twitter API calls using Angular 2(OAuth2)</h1>
+    </div>
+<div class="container">
+ 
+<button type="button" class="btn btn-primary" (click)="makecall()" id = "authbtn">Authorize</button>
+<hr>
+<div class="row">
+    <form >
+      <div class="row">
+        <div class="input-group">
+      <input type="text" [(ngModel)]="searchquery" [ngModelOptions]="{standalone: true}" class="form-control" (keyup.enter)="searchcall()" placeholder="I'm feeling lucky">
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" (click)="searchcall()"></i></button>
+      </div>
+    </div>
+
+
+      </div>
+      <hr>
+      <button class="btn btn-primary" (click)="searchcall()"  id = "srchbtn" align = "center">Search</button>
+      <!--<app-keyup></app-keyup>-->
+      <br>
+      <br>
+      
+      <div *ngFor="let item of tweetsdata" class="col-sm-12">
+        <div class="col-sm-12">
+            <div class = "card">
+                <div class="card-image">
+		            	<a href="{{profileURL}}" target="_blank">
+				          <img src="{{item.user.profile_image_url}}" alt="Profile Image" width="50" height="50" />
+		            	</a>
+	            	</div>
+                <!--<img style={width:10px,height:10px;} src={{item.user.profile_image_url}}>-->
+                <div class="card-content">
+			<div class="card-header">
+
+					<span class="name">
+						<b>{{item.user.name}}</b>
+					</span>
+					&nbsp;
+					<span class="handle">
+						@{{item.user.screen_name}}
+					</span>
+					&nbsp;
+					
+				
+			</div>
+                
+                <!--<span class="card-title">{{item.user.name}}</span>-->
+              
+                <!--<span class="card-title">{{item.user.screen_name}}</span>-->
+              <div class="card-text">
+                <p>{{item.text}}</p>
+              </div>
+                <!--<p>{{item.created_at}}</p>-->
+                <div class="card-footer">
+				<div class="action reply">
+					<i class="material-icons md-20">reply</i>
+				</div>
+				<div class="action retweet">
+					<i class="material-icons md-20">repeat</i>
+					<div class="counter retweet-count">
+						{{item.retweet_count}}
+					</div>
+				</div>
+				<div class="action like">
+					<i class="material-icons md-20">favorite_border</i>
+					<div class="counter like-count">
+						{{item.favourite_count}}
+					</div>
+				</div>
+        </div>
+			</div>
+            </div>
+            
+        <hr>
+        </div>
+        
+        
+      </div>
+      
+    </form>
+</div>
+</div>
+

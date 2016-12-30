@@ -1,0 +1,44 @@
+                #authtbtn{
+                        margin-left: 1800px;
+                }
+                    span.name {
+						color: black;
+						font-size: 1.1em;
+					}
+					span.handle {
+						color: grey;
+						font-size: 0.95em;
+					}
+                    div.reply:hover {
+					color: #89C9FA;
+				}
+
+				div.retweet:hover {
+					color: #19cf86;
+				}
+
+				div.like:hover {
+					color: #e81c4f;
+				}
+                
+				div.action {
+					color: #aab8c2;
+					display: flex;
+                    }
+                    div.counter{
+						margin-left: 5px;
+					}
+                    div.card-footer {
+				max-width: 200px;
+				margin-top: 12px;
+				display: flex;
+				justify-content: space-between;
+                    }
+                   app-footer {
+		position: relative;
+		bottom: 0;
+		left: 0;
+       
+
+		
+	}
